@@ -1,5 +1,3 @@
-require 'securerandom'
-
 class LinksController < ApplicationController
   def index
   end
@@ -14,7 +12,6 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
-    @link.short_url = SecureRandom.alphanumeric
     if @link.save
       redirect_to link_path(@link)
     else

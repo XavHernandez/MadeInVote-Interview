@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 require_relative '../../binary/binary'
 
 describe '#binary_space' do
