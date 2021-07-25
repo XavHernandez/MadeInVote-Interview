@@ -1,0 +1,14 @@
+<h1>Generate a Short URL</h1>
+
+<%= simple_form_for(@link) do |l| %>
+  <%= l.error_notification %>
+  <%= l.error_notification message: l.object.errors[:base].to_sentence if l.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= l.input :long_url %>
+  </div>
+
+  <div class="form-actions">
+    <%= l.button :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>
