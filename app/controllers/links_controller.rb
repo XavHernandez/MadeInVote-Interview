@@ -3,6 +3,7 @@ class LinksController < ApplicationController
   end
 
   def show
+    @link = Link.find(params[:id])
   end
 
   def new
@@ -10,6 +11,12 @@ class LinksController < ApplicationController
   end
 
   def create
+    @link = Link.new(link_params)
+    if @link.save
+      redirect_to link_path(@link)
+    else
+      render :new
+    end
   end
 
   private

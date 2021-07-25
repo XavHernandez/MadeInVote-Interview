@@ -1,2 +1,12 @@
-<h1>Links#show</h1>
-<p>Find me in app/views/links/show.html.erb</p>
+<h1>Your finalized Link</h1>
+<div class="container">
+  <h2>Long URL</h2>
+    <a href="<%= @link.long_url %>" target="_blank" rel="noreferrer"><%= @link.long_url %></a>
+  <h2 class="mt-3">Short URL</h2>
+    <a href="<%= @link.short_url %>" target="_blank" rel="noreferrer"><%= @link.short_url %></a>
+</div>
+<div>
+  <%= link_to root_path do %>
+        <button class="btn btn-primary" name="button">Back</button>
+      <% end %>
+</div>
